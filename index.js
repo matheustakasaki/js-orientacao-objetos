@@ -12,17 +12,18 @@ cliente2.cpf = 12312023913;
 
 // Criação objeto de conta corrente
 const contaCorrenteRicardo = new contaCorrente();
-contaCorrenteRicardo._saldo = 1000;
+contaCorrenteRicardo._saldo = 0;
 contaCorrenteRicardo.agencia = 1000;
+contaCorrenteRicardo.cliente = cliente1;
+contaCorrenteRicardo.depositar(500);
 
-contaCorrenteRicardo.depositar(100);
-contaCorrenteRicardo.depositar(100);
-contaCorrenteRicardo.depositar(100);
+const conta2 = new contaCorrente();
+conta2.cliente = cliente2;
+conta2.agencia = 102;
 
-
-const valorSacado = contaCorrenteRicardo.sacar(50);
-
+contaCorrenteRicardo.transferir(200, conta2);
 console.log(contaCorrenteRicardo);
+console.log(conta2);
 
 
 // Função e método são termos sinônimos e que nós ajudam a criar um vocabulário mais rico dentro do nosso sistema
