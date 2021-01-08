@@ -1,8 +1,9 @@
 export class contaCorrente {
     agencia;
+    cliente;
+
+
     _saldo = 0; //Por convenção, o underline indica que é um atributo privado, mas essa funcionalidade ainda não está implementada na linguagem js
-
-
     // _saldo = 0; - essa é uma proposta de atributo privado
 
     sacar(valor) {
@@ -19,5 +20,10 @@ export class contaCorrente {
             return
         }
         this._saldo += valor;
+    }
+
+    transferir (valor, conta){
+        const valorSacado = this.sacar(valor);
+        conta.depositar(valorSacado);
     }
 }
