@@ -1,0 +1,20 @@
+{
+  "name": "takabank",
+  "version": "1.0.0",
+  "description": "Projeto de fixação de conteúdo de orientacao a objetos. Esse projeto consiste na elaboração de um cenario bancario",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheustakasaki/js-orientacao-objetos.git"
+  },
+  "author": "matheustakasaki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matheustakasaki/js-orientacao-objetos/issues"
+  },
+  "homepage": "https://github.com/matheustakasaki/js-orientacao-objetos#readme",
+  "type": "module"
+}
