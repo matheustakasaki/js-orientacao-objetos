@@ -2,28 +2,21 @@ import { Cliente } from "./cliente.js";
 import { contaCorrente } from "./contaCorrente.js";
 
 // Criando o objeto Cliente
-const cliente1 = new Cliente();
-cliente1.nome = "Ricardo"
-cliente1.cpf = 11214509214;
-
-const cliente2 = new Cliente();
-cliente2.nome = "Alice"
-cliente2.cpf = 12312023913;
+const cliente1 = new Cliente("Ricardo", 11214509214);
+const cliente2 = new Cliente("Alice", 12312023913);
 
 // Criação objeto de conta corrente
-const contaCorrenteRicardo = new contaCorrente();
-contaCorrenteRicardo._saldo = 0;
-contaCorrenteRicardo.agencia = 1000;
-contaCorrenteRicardo.cliente = cliente1;
+const contaCorrenteRicardo = new contaCorrente(cliente1, 1000);
 contaCorrenteRicardo.depositar(500);
+const conta2 = new contaCorrente(cliente2, 1002);
 
-const conta2 = new contaCorrente();
-conta2.cliente = cliente2;
-conta2.agencia = 102;
-
-contaCorrenteRicardo.transferir(200, conta2);
+let valor = 200;
+contaCorrenteRicardo.transferir(valor, conta2);
 console.log(contaCorrenteRicardo);
-console.log(conta2);
+console.log(conta2)
+
+conta2.transferir(100,contaCorrenteRicardo);
+console.log(conta2.saldo, "Saldo do Ricardo:" + contaCorrenteRicardo.saldo);
 
 
 // Função e método são termos sinônimos e que nós ajudam a criar um vocabulário mais rico dentro do nosso sistema

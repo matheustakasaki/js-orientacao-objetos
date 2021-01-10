@@ -1,10 +1,32 @@
+import { Cliente } from "./cliente.js";
 export class contaCorrente {
+    static numeroDeContas = 0; 
     agencia;
-    cliente;
 
-
+    _cliente;
     _saldo = 0; //Por convenção, o underline indica que é um atributo privado, mas essa funcionalidade ainda não está implementada na linguagem js
     // _saldo = 0; - essa é uma proposta de atributo privado
+
+    set cliente (novoValor){
+        if (novoValor instanceof Cliente) {
+            this._cliente = novoValor;
+        }
+    }
+
+    get cliente () {
+        return this.cliente;
+    }
+
+    get saldo() {
+        return this._saldo;
+    }
+
+    constructor(cliente, agencia){
+        this.agencia = agencia;
+        this.cliente = cliente;
+        contaCorrente.numeroDeContas += 1
+    }
+
 
     sacar(valor) {
         if (this._saldo >= valor) {
