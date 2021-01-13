@@ -1,19 +1,38 @@
+import { ContaCorrente } from "./Conta/contaCorrente.js";
+import { ContaPoupanca } from "./Conta/contaPoupanca.js";
+
 import { Cliente } from "./cliente.js";
-import { contaCorrente } from "./contaCorrente.js";
-import { contaPoupanca } from "./contaPoupanca.js";
+import { Gerente } from "./Funcionario/gerente.js";
+import { Diretor } from "./Funcionario/diretor.js";
+import { SistemaAutenticacao } from "./sistemaAutenticacao.js";
+
+const diretor = new Diretor("Rodrigo", 10000, 12345678900);
+const gerente = new Gerente("Ricardo", 5000, 12312304313);
+
+diretor.cadastrarSenha("123456789");
+gerente.cadastrarSenha("123");
+
+const gerenteEstaLogado = SistemaAutenticacao.login(gerente, "123");
+const diretorEstaLogado = SistemaAutenticacao.login(diretor, "123456789");
+
+console.log(gerenteEstaLogado);
+console.log(diretorEstaLogado);
+
 
 // Criando o objeto Cliente
-const cliente1 = new Cliente("Ricardo", 11214509214);
+// const cliente1 = new Cliente("Ricardo", 11214509214);
 
 // Criação objeto de conta corrente
-const contaCorrenteRicardo = new contaCorrente(0, cliente1, 1000);
-contaCorrenteRicardo.depositar(500);
+// const contaCorrenteRicardo = new ContaCorrente(0, cliente1, 1000);
+// contaCorrenteRicardo.depositar(500);
 
-const ContaPoupanca = new contaPoupanca(50, cliente1, 1000);
+// const contaPoupanca = new ContaPoupanca(50, cliente1, 1000);
 
-console.log(contaCorrenteRicardo);
+// console.log(contaCorrenteRicardo);
 
-console.log(ContaPoupanca);
+// console.log(contaPoupanca);
+
+
 
 // Função e método são termos sinônimos e que nós ajudam a criar um vocabulário mais rico dentro do nosso sistema
 

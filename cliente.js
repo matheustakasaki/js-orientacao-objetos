@@ -4,10 +4,11 @@ export class Cliente {
         return this._cpf;
     }
 
-    constructor (nome, cpf) {
+    constructor (nome, cpf, senha) {
         // a boa prática é manter as propriedades dentro do contrutor.
         this.nome = nome;
         this._cpf = cpf;
+        this._senha = senha
     }
 
 }
